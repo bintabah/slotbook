@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:17
+    container_name: slotbook-db
+    environment:
+      POSTGRES_DB: slotbook
+      POSTGRES_USER: slotbook
+      POSTGRES_PASSWORD: slotbook_dev
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - slotbook-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U slotbook -d slotbook"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  slotbook-db-data:

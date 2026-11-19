@@ -1,0 +1,6 @@
+# Secrets locaux
+.env
+
+# Réglages personnels d'éditeur
+.vscode/
+.idea/

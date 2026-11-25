@@ -5,3 +5,7 @@ spring:
     url: jdbc:postgresql://localhost:5433/slotbook
     username: slotbook
     password: slotbook_dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
